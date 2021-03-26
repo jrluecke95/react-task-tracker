@@ -1,11 +1,12 @@
+import Task from "./Task"
 
 
-const Tasks = ({ tasks }) => {
+const Tasks = ({ tasks, onDelete, onToggle }) => {
   
   return (
     <>
-      {tasks.map((task) => {
-        return <h3 key={task.id}>{task.text}</h3>
+      {tasks.map((task, index) => {
+        return <Task key={index} task={task} onDelete={onDelete} onToggle={onToggle}/>
       })}
     </>
   )
